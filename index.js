@@ -10,10 +10,13 @@ app.post('/', (req, res) => {
   console.log(note)
   res.json(req.body)
 })
+app.get('/test', (req, res) => {
+  res.send('<h1>Hello Wold</h1>')
+})
 
 const server=http.createServer(app)
 
-const PORT=3001
+const PORT=process.env.PORT || 3001
 
 server.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
