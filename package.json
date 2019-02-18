@@ -1,0 +1,19 @@
+{
+  "name": "notebackend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest --verbose"
+  },
+  "author": "Karoliina Mietola",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "jest": "^24.1.0",
+    "supertest": "^3.4.2"
+  }
+}
