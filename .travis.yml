@@ -1,9 +1,14 @@
 language: node_js
 node_js:
-  - 10
-  - 9
-  - 8
+- 10
+- 9
+- 8
 install:
-  - npm install
+- npm install
 script:
-  - npm test
+- npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: oSKwbOruL5Jy05IFhLU95IA5e0eXVhJmOpX2QTSibDVFfJluxwm5OaMW3DJ+QuThmTIpmGad0UQwvHl2SY+zeeUlnzSMLVLoXFXk4gMQWvijVG9lGXiIlQdPgg3jpswOB5uINksbsOPYYnJKp9A/5hmAncbmLnVGKfOQN8VWFwjxd0ozBsP53Ys8VXw32L1HPYRrxDEfDr/OnFJCPLfTXwdRGDHAaJFgPjT/Q+6SMolMCBNBNy+MyClUojP5uE/NUbgt+PHbSyQC9VyHiEA1eX7A8MBRgbDMqwB6fleQM1yNkO1iEp+3qN0IBZZ8XaSvSANntlipCXsDdZa3ReFrJ9vA/O1iqoOY81V/L9yJgei3n/6mdRtIK5F/P5Zq9VRWHhHJwHtphsFuAzcq5LLDhRSHS0FJ3+c+WVbwU8ODwuOfdZgEsavjpGarT7KoyRLAcdIB8yx47dV1ut+oeRj+8fR+J4T5ALkiKCrXKKghp1As5LEcazU17lhHgEecaXdpTpqURJ4TVkc764cQ/vJwV/1OR4FE9i8jGN3NwwOR0Af6ZqYLAEmN1Cyy5dDbIq7qnfweP/T6yhUGDBW0PL12RmPBddE6C++2eWF4mjO+itccvFpyo0PHD4WWg56JAA/eEx5HTJ3dQKd3DyfP0o06hDMOE+7op/Oo0whacdDOEcU=
+  app: text-analyzer-api
