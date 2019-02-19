@@ -9,6 +9,14 @@ describe('string length with spaces', ()=> {
     const sentence=analyzer.lengthWithSpaces('One step beyond.')
     expect(sentence).toBe(16)
   })
+  test('empty string length', ()=> {
+    const sentence=analyzer.lengthWithSpaces('')
+    expect(sentence).toBe(0)
+  })
+  test('whitespace length', ()=> {
+    const sentence=analyzer.lengthWithSpaces(' ')
+    expect(sentence).toBe(1)
+  })
 })
 describe('string length without spaces', ()=> {
   test('return word length', () => {
@@ -19,6 +27,14 @@ describe('string length without spaces', ()=> {
     const sentence=analyzer.lengthWithoutSpaces('One step beyond.')
     expect(sentence).toBe(14)
   })
+  test('empty string length', ()=> {
+    const sentence=analyzer.lengthWithoutSpaces('')
+    expect(sentence).toBe(0)
+  })
+  test('whitespace length', ()=> {
+    const sentence=analyzer.lengthWithoutSpaces(' ')
+    expect(sentence).toBe(0)
+  })
 })
 describe('word count', ()=> {
   test('return word count in a word', ()=> {
@@ -28,6 +44,14 @@ describe('word count', ()=> {
   test('return word count in a sentence', ()=> {
     const words=analyzer.wordCount('One step beyond.')
     expect(words).toBe(3)
+  })
+  test('return word count in a empty string', ()=> {
+    const words=analyzer.wordCount('')
+    expect(words).toBe(0)
+  })
+  test('return word count in a whitespace', ()=> {
+    const words=analyzer.wordCount(' ')
+    expect(words).toBe(0)
   })
 })
 describe('return correct letter count', ()=> {
@@ -56,5 +80,9 @@ describe('return correct letter count', ()=> {
   test('non-english letters are ignored', ()=> {
     const result=analyzer.letterCount('Ääkkösiä')
     expect(result).toEqual([{"i": 1},{"k": 2},{"s": 1}])
+  })
+  test('works with an empty string', () => {
+    const result=analyzer.letterCount('')
+    expect(result).toEqual([])
   })
 })

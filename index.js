@@ -2,13 +2,16 @@ const http=require('http')
 const express=require('express')
 const bodyparser=require('body-parser')
 const app=express()
+const WordAnalyzer=require('./components/apiResponse')
+
 app.use(bodyparser.json())
 
 app.post('/', (req, res) => {
-  const note=req.body
+  const sentence=req.body
 
-  console.log(note)
-  res.json(req.body)
+  console.log(sentence)
+  console.log(WordAnalyzer.collect('Hei'))
+  res.json(sentence)
 })
 app.get('/test', (req, res) => {
   res.send('<h1>Hello Wold</h1>')
