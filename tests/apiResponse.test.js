@@ -1,6 +1,6 @@
 const apiResponse=require('../components/apiResponse')
 jest.mock('../actions/analyze')
-describe('eka', ()=> {
+describe('test the response collect component with a mock', ()=> {
   test('return correct response', () => {
     const response=apiResponse.collect()
     expect(response).toEqual({

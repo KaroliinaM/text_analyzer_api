@@ -6,12 +6,13 @@ const WordAnalyzer=require('./components/apiResponse')
 
 app.use(bodyparser.json())
 
-app.post('/', (req, res) => {
+app.post('/analyze', (req, res) => {
   const sentence=req.body
-
-  console.log(sentence)
-  console.log(WordAnalyzer.collect('Hei'))
-  res.json(sentence)
+  if(sentence.text === undefined) {
+    return res.status(400).json({ error: 'bad request' })
+  }
+  const result=WordAnalyzer.collect(sentence.text)
+  res.json(result)
 })
 app.get('/test', (req, res) => {
   res.send('<h1>Hello Wold</h1>')
