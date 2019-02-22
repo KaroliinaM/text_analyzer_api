@@ -4,4 +4,4 @@
 
 https://text-analyzer-api.herokuapp.com/analyze 
 
-Analyzes strings sent as post requests to this URL, sent as data: {Text: *yourtext*}. 
+Analyzes strings sent as post requests to this URL, sent as data: { Text: "*yourtext*" }. 
