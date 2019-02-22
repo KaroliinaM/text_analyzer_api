@@ -11,8 +11,7 @@ apiRouter.post('/', async (req, res) => {
     const result=await WordAnalyzer.collect(sentence.text)
     res.json(result)
   } catch(exception) {
-    console.log(exception)
-    res.status(500).json({error: 'error: something wrong'})
+    res.status(500).json({error: `error: ${exception}`})
   }
 })
 
