@@ -10,10 +10,6 @@ app.use(bodyparser.json())
 app.use('/analyze', apiRouter)
 app.use(cors())
 
-app.get('/test', (req, res) => {
-  res.send('<h1>Hello Wold</h1>')
-})
-
 const server=http.createServer(app)
 
 server.listen(config.port, () => {
